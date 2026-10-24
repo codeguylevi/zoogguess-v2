@@ -77,7 +77,6 @@ def generate_question(category, trait_val):
         "Keep it strictly as a single yes-no question. Do not list alternatives or multiple options.\n\n"
         f"Incomplete question: {stem}"
     )
-    
     text = _run_model_inference(prompt)
     first_clause = text.split("\n")[0].split("?")[0].strip()
     candidate = f"{stem} {first_clause}".strip()
@@ -155,16 +154,16 @@ def step_game(answer, state):
     top_animal, top_prob = sorted_candidates[0]
     second_animal, second_prob = sorted_candidates[1]
 
-    top3 = [f"{ANIMAL_DB[k]['display_name']} ({v*100:.1f}%)" for k, v in sorted_candidates[:3] if v > 0.03]
-    status_text = f"**Current Leading Contenders:** {', '.join(top3)}"
+    top3 = [f"{ANIMAL_DB[k]["display_name"]} ({v*100:.1f}%)" for k, v in sorted_candidates[:3] if v > 0.03]
+    status_text = f"**Current Leading Contenders:** {", ".join(top3)}"
 
     if top_prob > 0.82 or (top_prob > 0.65 and top_prob > second_prob * 3.5) or state["q_count"] >= 20:
         state["done"] = True
         win_data = ANIMAL_DB[top_animal]
         res = (
-            f"## 🎉 Deduction Complete in {state['q_count']} Questions!\n"
-            f"### You were thinking of: **{win_data['display_name']}** ({top_prob*100:.1f}% confidence)\n\n"
-            f"> {win_data['description'][:350]}..."
+            f"## Deduction Complete in {state["q_count"]} Questions!\n"
+            f"### You were thinking of: **{win_data["display_name"]}** ({top_prob*100:.1f}% confidence)\n\n"
+            f"> {win_data["description"][:350]}..."
         )
         return state, res, status_text, gr.update(visible=False), gr.update(visible=True)
 
@@ -176,7 +175,7 @@ def step_game(answer, state):
     if not best_trait:
         state["done"] = True
         win_data = ANIMAL_DB[top_animal]
-        return state, f"## Guess: **{win_data['display_name']}**", status_text, gr.update(visible=False), gr.update(visible=True)
+        return state, f"## Guess: **{win_data["display_name"]}**", status_text, gr.update(visible=False), gr.update(visible=True)
 
     state["curr_trait"] = best_trait
     state["asked"].append(best_trait)
@@ -184,10 +183,10 @@ def step_game(answer, state):
     state["q_count"] += 1
 
     next_q = generate_question(best_trait[0], best_trait[1])
-    return state, f"### Question {state['q_count']}\n**{next_q}**", status_text, gr.update(visible=True), gr.update(visible=False)
+    return state, f"### Question {state["q_count"]}\n**{next_q}**", status_text, gr.update(visible=True), gr.update(visible=False)
 
 with gr.Blocks(title="ZoogGuess V2", theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# 🐾 ZoogGuess V2: Neural-Bayesian 20 Questions")
+    gr.Markdown("# ZoogGuess V2: Neural-Bayesian 20 Questions")
     gr.Markdown("Think of an animal species. The Bayesian engine calculates optimal information gain while SmolLM2 synthesizes dynamic questions on the fly.")
     
     state_box = gr.State()
@@ -201,7 +200,7 @@ with gr.Blocks(title="ZoogGuess V2", theme=gr.themes.Soft()) as demo:
         btn_d = gr.Button("Doubtful")
         btn_n = gr.Button("No", variant="stop")
 
-    restart_btn = gr.Button("🔄 Play Again", visible=False)
+    restart_btn = gr.Button("Play Again", visible=False)
 
     demo.load(init_game, outputs=[state_box, q_box, status_box, btn_row, restart_btn])
     restart_btn.click(init_game, outputs=[state_box, q_box, status_box, btn_row, restart_btn])
