@@ -5,6 +5,12 @@ import gradio as gr
 from collections import defaultdict
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
+try:
+    import spaces
+    HAS_SPACES = True
+except ImportError:
+    HAS_SPACES = False
+
 MODEL_ID = "HuggingFaceTB/SmolLM2-135M-Instruct"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -51,6 +57,18 @@ def determine_stem(category, clean_trait):
         return f"Is this animal known for being {clean_trait}"
     return f"Does your animal have {clean_trait}"
 
+def _run_model_inference(prompt):
+    inputs = tokenizer(prompt, return_tensors="pt").to(DEVICE)
+    with torch.no_grad():
+        outputs = model.generate(
+            **inputs, max_new_tokens=18, temperature=0.2, top_p=0.8,
+            repetition_penalty=1.3, do_sample=True, pad_token_id=tokenizer.eos_token_id
+        )
+    return tokenizer.decode(outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
+
+if HAS_SPACES:
+    _run_model_inference = spaces.GPU(_run_model_inference)
+
 def generate_question(category, trait_val):
     clean_trait = trait_val.replace("_", " ").replace("/", " or ")
     stem = determine_stem(category, clean_trait)
@@ -59,13 +77,8 @@ def generate_question(category, trait_val):
         "Keep it strictly as a single yes-no question. Do not list alternatives or multiple options.\n\n"
         f"Incomplete question: {stem}"
     )
-    inputs = tokenizer(prompt, return_tensors="pt").to(DEVICE)
-    with torch.no_grad():
-        outputs = model.generate(
-            **inputs, max_new_tokens=18, temperature=0.2, top_p=0.8,
-            repetition_penalty=1.3, do_sample=True, pad_token_id=tokenizer.eos_token_id
-        )
-    text = tokenizer.decode(outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
+    
+    text = _run_model_inference(prompt)
     first_clause = text.split("\n")[0].split("?")[0].strip()
     candidate = f"{stem} {first_clause}".strip()
     if not candidate.endswith("?"):
@@ -118,7 +131,7 @@ def init_game():
         "probs": probs, "asked": [first_trait], "last_cat": first_trait[0],
         "q_count": 1, "done": False, "curr_trait": first_trait
     }
-    return state, f"### Question 1\n**{first_q}**", "Thinking of an animal? Select an option below to begin.", gr.update(visible=True), gr.update(visible=False)
+    return state, f"### Question 1\n**{first_q}**", "Game started! Think of an animal.", gr.update(visible=True), gr.update(visible=False)
 
 def step_game(answer, state):
     if not state or state["done"]:
