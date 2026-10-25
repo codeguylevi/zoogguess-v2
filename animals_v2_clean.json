@@ -7355,19 +7355,25 @@
     }
   },
   "goat": {
-    "name": "goat",
     "display_name": "Goat",
-    "description": "The goat or domestic goat (Capra hircus) is a species of caprine that is mostly kept as livestock. It was domesticated from the wild goat (C. aegagrus) of Southwest Asia and Eastern Europe. The goat is a member of the family Bovidae and is closely related to the sheep. It was one of the first animals to be domesticated, in Iran around 10,000 years ago. Goats have been used for milk, meat, wool, an...",
+    "description": "The domestic goat (Capra hircus) is a domesticated mammal known for agility, curved horns, and adaptability to rocky terrain and farms.",
     "attributes": {
       "class": "mammal",
-      "biome": "savanna or grassland",
+      "biome": [
+        "pastures or farmland",
+        "mountainous or alpine highlands"
+      ],
       "diet": "herbivore or plant-eater",
-      "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
-      "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
-      "build": "heavy robust build"
+      "lifestyle": [
+        "domesticated",
+        "social or herd-dwelling"
+      ],
+      "covering": "short fur or hair",
+      "limbs": [
+        "four legs",
+        "cloven hooves"
+      ],
+      "weapons": "horns or blunt defense"
     }
   },
   "donkey": {
@@ -7379,27 +7385,30 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
   "horse": {
-    "name": "horse",
     "display_name": "Horse",
-    "description": "The horse (Equus ferus caballus) is a domesticated, one-toed, hoofed mammal. It belongs to the taxonomic family Equidae and is one of two extant subspecies of Equus ferus. The horse has evolved over the past 45 to 55 million years from a small multi-toed creature, Eohippus, into the large single-toed animal of today, originally in North America. Humans began domesticating horses around 4000 BCE in...",
+    "description": "The horse (Equus caballus) is an odd-toed ungulate mammal domesticated for riding, working, and companionship.",
     "attributes": {
       "class": "mammal",
-      "biome": "savanna or grassland",
+      "biome": [
+        "pastures or farmland",
+        "grasslands"
+      ],
       "diet": "herbivore or plant-eater",
-      "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
-      "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
-      "build": "heavy robust build"
+      "lifestyle": [
+        "domesticated",
+        "social or herd-dwelling"
+      ],
+      "covering": "short fur with mane and tail hair",
+      "limbs": [
+        "four legs",
+        "single solid hooves"
+      ],
+      "build": "tall athletic build"
     }
   },
   "water buffalo": {
@@ -7443,10 +7452,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7459,10 +7465,7 @@
       "biome": "mountainous or alpine highlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7475,10 +7478,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7491,10 +7491,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7509,8 +7506,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7523,10 +7518,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "nocturnal or night-active",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7541,8 +7533,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7557,8 +7547,6 @@
       "lifestyle": "solitary",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7571,10 +7559,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "carnivore or active predator",
       "lifestyle": "solitary",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7589,8 +7574,6 @@
       "lifestyle": "solitary",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7605,8 +7588,6 @@
       "lifestyle": "solitary",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7619,27 +7600,31 @@
       "biome": "polar ice or cold tundra",
       "diet": "carnivore or active predator",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs with paws and claws",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
   "eurasian lynx": {
-    "name": "eurasian lynx",
     "display_name": "Eurasian lynx",
-    "description": "The Eurasian lynx (Lynx lynx) is one of the four extant species within the medium-sized wild cat genus Lynx. It is widely distributed from Northern, Central and Eastern Europe to Central Asia and Siberia, the Tibetan Plateau and the Himalayas. It inhabits temperate and boreal forests up to an elevation of 5,500 m (18,000 ft). Despite its wide distribution, it is threatened by habitat loss and frag...",
+    "description": "The Eurasian lynx (Lynx lynx) is a medium-sized solitary wild cat native to European and Siberian boreal and temperate forests. Notable for its tufted ears and spotted coat.",
     "attributes": {
       "class": "mammal",
-      "biome": "temperate forests or woodlands",
-      "diet": "herbivore or plant-eater",
-      "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
-      "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
-      "build": "heavy robust build"
+      "biome": [
+        "temperate forests or woodlands",
+        "polar ice or cold tundra"
+      ],
+      "diet": "carnivore or active predator",
+      "lifestyle": [
+        "solitary",
+        "nocturnal or night-active"
+      ],
+      "covering": "thick fur with spots",
+      "limbs": [
+        "four legs",
+        "sharp retractable claws"
+      ],
+      "weapons": "sharp fangs or canine teeth",
+      "head": "tufted ears"
     }
   },
   "clouded leopard": {
@@ -7651,10 +7636,7 @@
       "biome": "temperate forests or woodlands",
       "diet": "carnivore or active predator",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7667,10 +7649,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "diurnal or active during daylight",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs with hooves",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7683,10 +7662,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "diurnal or active during daylight",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs with hooves",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7701,8 +7677,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "four legs with hooves",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7715,10 +7689,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7733,8 +7704,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7749,8 +7718,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7765,8 +7732,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7781,8 +7746,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs with hooves",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7811,10 +7774,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7829,8 +7789,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7845,8 +7803,6 @@
       "lifestyle": "solitary",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7861,8 +7817,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7877,8 +7831,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7893,8 +7845,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7909,8 +7859,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7925,8 +7873,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7941,8 +7887,6 @@
       "lifestyle": "diurnal or active during daylight",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7957,8 +7901,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs with paws and claws",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7973,8 +7915,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -7987,10 +7927,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8003,10 +7940,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8019,10 +7953,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8035,10 +7966,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8053,8 +7981,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8069,8 +7995,6 @@
       "lifestyle": "solitary",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8083,10 +8007,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8101,8 +8022,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8115,10 +8034,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8133,8 +8049,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8147,10 +8061,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8165,8 +8076,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8181,8 +8090,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8195,10 +8102,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8213,8 +8117,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8227,10 +8129,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "solitary",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8245,8 +8144,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8261,8 +8158,6 @@
       "lifestyle": "solitary",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8277,8 +8172,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8293,8 +8186,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8309,8 +8200,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8325,8 +8214,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8339,10 +8226,7 @@
       "biome": "freshwater wetlands, lakes, or rivers",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8357,8 +8241,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8373,8 +8255,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8387,10 +8267,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8406,7 +8283,6 @@
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
       "weapons": "prominent tusks",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8419,10 +8295,8 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "solitary",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "prominent tusks",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8435,10 +8309,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8451,10 +8322,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8469,8 +8337,6 @@
       "lifestyle": "solitary",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8486,7 +8352,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8499,10 +8364,8 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "solitary",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8515,10 +8378,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8531,10 +8391,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8547,10 +8404,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8563,10 +8417,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "solitary",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8579,10 +8430,8 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "prominent tusks",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8595,10 +8444,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8611,10 +8457,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "nocturnal or night-active",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8630,7 +8473,6 @@
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
       "weapons": "branched antlers",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8643,10 +8485,7 @@
       "biome": "mountainous or alpine highlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8659,10 +8498,8 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "branched antlers",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8675,10 +8512,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8691,10 +8525,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8707,10 +8538,7 @@
       "biome": "arid desert or scrubland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs with hooves",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8723,10 +8551,7 @@
       "biome": "mountainous or alpine highlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8739,10 +8564,8 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "branched antlers",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8755,10 +8578,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8771,10 +8591,8 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "sharp fangs or canine teeth",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8787,10 +8605,8 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "prominent tusks",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8803,10 +8619,8 @@
       "biome": "temperate forests or woodlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8819,10 +8633,8 @@
       "biome": "arid desert or scrubland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8838,7 +8650,6 @@
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8851,10 +8662,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8867,10 +8675,7 @@
       "biome": "freshwater wetlands, lakes, or rivers",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8883,10 +8688,8 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8902,7 +8705,6 @@
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8915,10 +8717,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8933,8 +8732,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8947,10 +8744,7 @@
       "biome": "temperate forests or woodlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8963,10 +8757,8 @@
       "biome": "arid desert or scrubland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8979,10 +8771,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -8995,10 +8784,8 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9011,10 +8798,7 @@
       "biome": "arid desert or scrubland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9027,10 +8811,8 @@
       "biome": "arid desert or scrubland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9046,7 +8828,6 @@
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9059,10 +8840,7 @@
       "biome": "mountainous or alpine highlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9075,10 +8853,7 @@
       "biome": "arid desert or scrubland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9091,10 +8866,8 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs with hooves",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9110,7 +8883,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9123,10 +8895,8 @@
       "biome": "mountainous or alpine highlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9139,10 +8909,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9155,10 +8922,8 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9171,10 +8936,8 @@
       "biome": "mountainous or alpine highlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "permanent horns",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9187,10 +8950,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9251,10 +9011,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9267,10 +9024,7 @@
       "biome": "freshwater wetlands, lakes, or rivers",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9283,10 +9037,7 @@
       "biome": "mountainous or alpine highlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9301,8 +9052,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9315,10 +9064,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9331,10 +9077,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9347,10 +9090,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9363,10 +9103,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9379,10 +9116,7 @@
       "biome": "temperate forests or woodlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9395,10 +9129,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "diurnal or active during daylight",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9411,10 +9142,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9427,10 +9155,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9443,10 +9168,7 @@
       "biome": "temperate forests or woodlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9461,8 +9183,6 @@
       "lifestyle": "diurnal or active during daylight",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9475,10 +9195,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9491,10 +9208,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9507,10 +9221,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "diurnal or active during daylight",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9523,10 +9234,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9541,8 +9249,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9557,8 +9263,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9573,8 +9277,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9587,10 +9289,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9603,10 +9302,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9621,8 +9317,6 @@
       "lifestyle": "diurnal or active during daylight",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9635,10 +9329,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9651,10 +9342,7 @@
       "biome": "freshwater wetlands, lakes, or rivers",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9667,10 +9355,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9683,10 +9368,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "nocturnal or night-active",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9701,8 +9383,6 @@
       "lifestyle": "diurnal or active during daylight",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9715,10 +9395,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9733,8 +9410,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9749,8 +9424,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9763,10 +9436,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9779,10 +9449,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9795,10 +9462,7 @@
       "biome": "freshwater wetlands, lakes, or rivers",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9811,10 +9475,7 @@
       "biome": "temperate forests or woodlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "nocturnal or night-active",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9827,10 +9488,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9845,8 +9503,6 @@
       "lifestyle": "solitary",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9859,10 +9515,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "nocturnal or night-active",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9875,10 +9528,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9893,8 +9543,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9909,8 +9557,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9925,8 +9571,6 @@
       "lifestyle": "solitary",
       "covering": "feathers or plumage",
       "limbs": "four legs with paws and claws",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9941,8 +9585,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9957,8 +9599,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9973,8 +9613,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -9989,8 +9627,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10005,8 +9641,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10021,8 +9655,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10037,8 +9669,6 @@
       "lifestyle": "diurnal or active during daylight",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10053,8 +9683,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10069,8 +9697,6 @@
       "lifestyle": "diurnal or active during daylight",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10085,8 +9711,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10101,8 +9725,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10117,8 +9739,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10133,8 +9753,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10149,8 +9767,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10165,8 +9781,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10179,10 +9793,7 @@
       "biome": "arid desert or scrubland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10195,10 +9806,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10213,8 +9821,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10245,8 +9851,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10261,8 +9865,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10277,8 +9879,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10293,8 +9893,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10309,8 +9907,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10325,8 +9921,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10341,8 +9935,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10357,8 +9949,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10371,10 +9961,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10389,8 +9976,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10405,8 +9990,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10419,10 +10002,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10435,10 +10015,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10453,8 +10030,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "flippers for swimming",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10469,8 +10044,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "flippers for swimming",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10485,8 +10058,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10501,8 +10072,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10517,8 +10086,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10533,8 +10100,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10549,8 +10114,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10565,8 +10128,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10581,8 +10142,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10597,8 +10156,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10613,8 +10170,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10627,10 +10182,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10645,8 +10197,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10659,10 +10209,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10677,8 +10224,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10693,8 +10238,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10709,8 +10252,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10723,10 +10264,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10741,8 +10279,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10755,10 +10291,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10773,8 +10306,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10789,8 +10320,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10805,8 +10334,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10821,8 +10348,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10837,8 +10362,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10853,8 +10376,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10869,8 +10390,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10885,8 +10404,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10899,10 +10416,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10917,8 +10431,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10933,8 +10445,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10949,8 +10459,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10965,8 +10473,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10981,8 +10487,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -10997,8 +10501,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11013,8 +10515,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11029,8 +10529,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11045,8 +10543,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11061,8 +10557,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11077,8 +10571,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11093,8 +10585,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11109,8 +10599,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11125,8 +10613,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11141,8 +10627,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11157,8 +10641,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11173,8 +10655,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11189,8 +10669,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11205,8 +10683,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11222,7 +10698,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11235,10 +10710,7 @@
       "biome": "tropical rainforest or jungle",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11251,10 +10723,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "nocturnal or night-active",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11269,8 +10738,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11286,7 +10753,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11301,8 +10767,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11315,10 +10779,8 @@
       "biome": "temperate forests or woodlands",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11334,7 +10796,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11349,8 +10810,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11366,7 +10825,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11382,7 +10840,6 @@
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11398,7 +10855,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11414,7 +10870,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11430,7 +10885,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11446,7 +10900,6 @@
       "covering": "scales or scutes",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11461,8 +10914,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11477,8 +10928,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11493,8 +10942,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11509,8 +10956,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11525,8 +10970,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11541,8 +10984,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11557,8 +10998,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11571,10 +11010,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11587,10 +11023,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11605,8 +11038,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11621,8 +11052,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11637,8 +11066,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11653,8 +11080,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or scutes",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11669,8 +11094,6 @@
       "lifestyle": "solitary",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11685,8 +11108,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11701,8 +11122,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11717,8 +11136,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11733,8 +11150,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11749,8 +11164,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11765,8 +11178,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11781,8 +11192,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11797,8 +11206,6 @@
       "lifestyle": "solitary",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11813,8 +11220,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11829,8 +11234,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11845,8 +11248,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11861,8 +11262,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11877,8 +11276,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11893,8 +11290,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11909,8 +11304,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11925,8 +11318,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11941,8 +11332,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11957,8 +11346,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11973,8 +11360,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -11989,8 +11374,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12005,8 +11388,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12021,8 +11402,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12035,10 +11414,7 @@
       "biome": "open ocean or coastal waters",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12053,8 +11429,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12070,7 +11444,6 @@
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12085,8 +11458,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12101,8 +11472,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12117,8 +11486,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12133,8 +11500,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12149,8 +11514,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12165,8 +11528,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs with paws and claws",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12179,10 +11540,7 @@
       "biome": "polar ice or cold tundra",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12195,10 +11553,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "nocturnal or night-active",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12214,7 +11569,6 @@
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12229,8 +11583,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12245,8 +11597,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12262,7 +11612,6 @@
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12275,10 +11624,7 @@
       "biome": "freshwater wetlands, lakes, or rivers",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12293,8 +11639,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "feathers or plumage",
       "limbs": "two legs and wings",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12307,10 +11651,7 @@
       "biome": "freshwater wetlands, lakes, or rivers",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12325,8 +11666,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12339,10 +11678,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12355,10 +11691,7 @@
       "biome": "savanna or grassland",
       "diet": "herbivore or plant-eater",
       "lifestyle": "social or herd-dwelling",
-      "covering": "smooth skin or short coat",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12373,8 +11706,6 @@
       "lifestyle": "nocturnal or night-active",
       "covering": "moist permeable skin",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12389,8 +11720,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12405,8 +11734,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12422,7 +11749,6 @@
       "covering": "scales or denticles",
       "limbs": "pectoral and dorsal fins",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12438,7 +11764,6 @@
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
       "weapons": "venomous bite or stinger",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12453,8 +11778,6 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
@@ -12469,25 +11792,54 @@
       "lifestyle": "social or herd-dwelling",
       "covering": "exoskeleton or outer shell",
       "limbs": "four legs",
-      "weapons": "none",
-      "markings": "solid coloration",
       "build": "heavy robust build"
     }
   },
   "cow": {
-    "name": "cow",
     "display_name": "Cow (Cattle)",
-    "description": "Cattle (Bos taurus) are large domesticated bovine ungulates. They are a prominent modern member of the subfamily Bovinae and the most widespread species of the genus Bos. Mature female cattle are referred to as cows, mature males as bulls, and young as calves. Primarily raised as livestock for meat, milk, and hides.",
+    "description": "Domestic cattle (Bos taurus) are large domesticated bovine ungulates raised as livestock for meat, milk, and leather. They are social herd animals that graze on grasses in pastures and farms.",
     "attributes": {
       "class": "mammal",
-      "biome": "pastures, farms, or grasslands",
+      "biome": [
+        "pastures or farmland",
+        "grasslands"
+      ],
       "diet": "herbivore or plant-eater",
-      "lifestyle": "social or herd-dwelling",
-      "covering": "short coat of fur or hair",
-      "limbs": "four legs with hooves",
+      "lifestyle": [
+        "domesticated",
+        "social or herd-dwelling",
+        "diurnal or active during daylight"
+      ],
+      "covering": "short fur or hair",
+      "limbs": [
+        "four legs",
+        "cloven hooves"
+      ],
       "weapons": "horns or blunt defense",
-      "markings": "solid or spotted coat",
-      "build": "heavy robust build"
+      "build": "heavy robust build",
+      "special": "produces milk or farmed by humans"
+    }
+  },
+  "domestic sheep": {
+    "display_name": "Domestic sheep",
+    "description": "Sheep (Ovis aries) are quadrupedal, ruminant mammals typically kept as livestock. They are covered in thick wool and graze on grasses and pastures.",
+    "attributes": {
+      "class": "mammal",
+      "biome": [
+        "pastures or farmland",
+        "grasslands"
+      ],
+      "diet": "herbivore or plant-eater",
+      "lifestyle": [
+        "domesticated",
+        "social or herd-dwelling"
+      ],
+      "covering": "thick wool or fleece",
+      "limbs": [
+        "four legs",
+        "cloven hooves"
+      ],
+      "build": "stocky build"
     }
   }
 }

@@ -30,139 +30,122 @@ with open(DB_PATH, "r", encoding="utf-8") as f:
 
 ALL_ANIMALS = list(ANIMAL_DB.keys())
 
-OPPOSITES = {
-    ("lifestyle", "solitary"): ("lifestyle", "social_or_pack"),
-    ("lifestyle", "social_or_pack"): ("lifestyle", "solitary"),
-    ("lifestyle", "nocturnal_night_active"): ("lifestyle", "diurnal_day_active"),
-    ("lifestyle", "diurnal_day_active"): ("lifestyle", "nocturnal_night_active"),
-    ("diet", "carnivore/predator"): ("diet", "herbivore/grazer"),
-    ("diet", "herbivore/grazer"): ("diet", "carnivore/predator")
+NATURAL_TEMPLATES = {
+    "class": "Is this animal a {val}?",
+    "biome": "Does this animal typically live in {val}?",
+    "diet": "Is this creature known for being a {val}?",
+    "lifestyle": "Is this animal known for {val}?",
+    "covering": "Does this creature have {val}?",
+    "limbs": "Does this animal have {val}?",
+    "weapons": "Does this animal have {val}?",
+    "head": "Does this creature feature {val}?",
+    "build": "Does this animal have a {val}?",
+    "special": "Is this animal known for {val}?"
 }
 
-FRIENDLY_TRAIT_MAP = {
-    "folivore browser": "feeding primarily on leaves, twigs, and tree bark",
-    "frugivore": "eating mostly fruit and berries",
-    "insectivore": "eating mostly insects and invertebrates",
-    "herbivore/grazer": "eating grass and vegetation",
-    "carnivore/predator": "hunting and eating other animals",
-    "omnivore": "eating both plants and meat",
-    "piscivore": "eating primarily fish",
-    "hooves": "walking on hooves",
-    "four_legs_quadruped": "walking on all four legs",
-    "bipedal_two_legs": "standing and walking on two legs",
-    "pectoral_flippers": "having flippers for swimming",
-    "prehensile_tail": "having a grasping tail that can hold branches",
-    "sagittal crest": "having a prominent bony crest on the top of its head",
-    "tufted tail": "having a tail with a tuft of hair on the end",
-    "permanent horns": "possessing permanent horns on its head",
-    "branched antlers": "possessing branched antlers that shed",
-    "blubber fat layer": "having a thick layer of insulating blubber",
-    "smooth rubbery hairless skin": "having smooth, hairless, rubbery skin",
-    "diurnal_day_active": "being active mostly during daylight hours",
-    "nocturnal_night_active": "being active mostly at night",
-    "solitary": "living a solitary life rather than in a herd or pack",
-    "social_or_pack": "living in herds, packs, or social groups",
-    "arboreal tree dweller": "spending most of its life up in the trees",
-    "semi aquatic": "spending significant time in the water"
+FRIENDLY_PHRASES = {
+    "four legs": "walking on four legs",
+    "cloven hooves": "having split or cloven hooves",
+    "single solid hooves": "having solid hooves like a horse",
+    "domesticated": "being a domesticated animal or livestock",
+    "social or herd-dwelling": "living in herds, packs, or social groups",
+    "solitary": "living mostly alone rather than in a herd",
+    "herbivore or plant-eater": "eating mostly grass, leaves, or plants",
+    "carnivore or active predator": "hunting and eating other animals",
+    "pastures or farmland": "farms, barns, or agricultural pastures",
+    "temperate forests or woodlands": "woodlands or temperate forests",
+    "polar ice or cold tundra": "freezing arctic ice or cold tundra",
+    "tropical rainforest or jungle": "tropical rainforests or jungles",
+    "arid desert or scrubland": "dry deserts or arid scrublands",
+    "mountainous or alpine highlands": "steep mountains or rocky highlands",
+    "thick wool or fleece": "a thick coat of wool or fleece",
+    "sharp fangs or canine teeth": "prominent fangs or sharp canine teeth",
+    "tufted ears": "distinctive tufts of hair on the tips of its ears",
+    "horns or blunt defense": "horns on its head"
 }
-
-def determine_stem(category, clean_trait):
-    for k, v in FRIENDLY_TRAIT_MAP.items():
-        if k in clean_trait:
-            clean_trait = clean_trait.replace(k, v)
-
-    if category == "biome":
-        return f"Does your animal make its home in {clean_trait}"
-    elif category == "class":
-        return f"Is this creature considered a {clean_trait}"
-    elif category in ["weapons", "markings", "covering", "head"]:
-        if "having" in clean_trait or "possessing" in clean_trait:
-            return f"Is this animal characterized by {clean_trait}"
-        return f"Does this animal sport noticeable {clean_trait}"
-    elif category == "limbs":
-        if "walking" in clean_trait or "moving" in clean_trait or "having" in clean_trait:
-            return f"Is your creature known for {clean_trait}"
-        return f"Does your creature move around using {clean_trait}"
-    elif category in ["diet", "lifestyle", "build"]:
-        if "eating" in clean_trait or "feeding" in clean_trait or "being" in clean_trait or "living" in clean_trait:
-            return f"Is your animal known for {clean_trait}"
-        return f"Would you describe this animal as {clean_trait}"
-    return f"Does your animal have {clean_trait}"
 
 def _run_model_inference(prompt):
     inputs = tokenizer(prompt, return_tensors="pt").to(DEVICE)
     with torch.no_grad():
         outputs = model.generate(
-            **inputs, max_new_tokens=16, temperature=0.2, top_p=0.8,
-            repetition_penalty=1.3, do_sample=True, pad_token_id=tokenizer.eos_token_id
+            **inputs, max_new_tokens=20, temperature=0.2, top_p=0.85,
+            repetition_penalty=1.2, do_sample=True, pad_token_id=tokenizer.eos_token_id
         )
     return tokenizer.decode(outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
 
 if HAS_SPACES:
     _run_model_inference = spaces.GPU(_run_model_inference)
 
-def generate_question(category, trait_val):
-    clean_trait = trait_val.replace("_", " ").replace("/", " or ")
-    stem = determine_stem(category, clean_trait)
+def generate_natural_question(category, trait_val):
+    clean_val = trait_val.replace("_", " ").strip()
+    friendly_val = FRIENDLY_PHRASES.get(clean_val, clean_val)
+    template = NATURAL_TEMPLATES.get(category, "Does your animal feature {val}?")
+    direct_q = template.format(val=friendly_val)
+
     prompt = (
-        "Complete the following yes-no question about an animal attribute. "
-        "Keep it strictly as a single yes-no question. Do not list alternatives or multiple options.\n\n"
-        f"Incomplete question: {stem}"
+        "Rephrase this into a friendly, clear Yes/No question for 20 Questions without changing its meaning. "
+        "Keep it strictly under 15 words and end with a question mark:\n\n"
+        f"Input: {direct_q}\n"
+        "Question:"
     )
-    text = _run_model_inference(prompt)
-    first_clause = text.split("\n")[0].split("?")[0].strip()
-    candidate = f"{stem} {first_clause}".strip()
-    if not candidate.endswith("?"):
-        candidate += "?"
-    candidate = " ".join(candidate.split())
-    if any(p in candidate.lower() for p in [", or", "what type", "which of", "how many", "rather than", "if so", "folivore"]):
-        return f"{stem}?"
-    return candidate
+    generated = _run_model_inference(prompt)
+    first_line = generated.split("\n")[0].split("?")[0].strip()
+    if len(first_line) > 5 and any(first_line.lower().startswith(w) for w in ["is", "does", "can", "would", "has", "do", "are"]):
+        return first_line + "?"
+    return direct_q
 
 def get_animal_traits(animal_data):
     traits = set()
-    attrs = animal_data.get("attributes", {})
-    for cat, val in attrs.items():
+    for cat, val in animal_data.get("attributes", {}).items():
         if isinstance(val, list):
             for v in val:
-                traits.add((cat, v))
+                if v.lower().strip() not in ["none", "unknown", "n/a", ""]:
+                    traits.add((cat, v))
         elif isinstance(val, str):
-            traits.add((cat, val))
+            if val.lower().strip() not in ["none", "unknown", "n/a", ""]:
+                traits.add((cat, val))
     return traits
 
-def calculate_best_trait(probabilities, asked_traits, last_category):
+def calculate_best_trait(probabilities, asked_traits, recent_categories):
     trait_weights = defaultdict(float)
     for animal, prob in probabilities.items():
-        if prob < 0.0005:
+        if prob < 0.0002:
             continue
         for t in get_animal_traits(ANIMAL_DB[animal]):
             if t not in asked_traits:
                 trait_weights[t] += prob
 
-    best_trait, best_score = None, float("inf")
+    best_trait = None
+    best_score = float("inf")
+
     for trait, weight in trait_weights.items():
-        if not (0.04 < weight < 0.96):
+        if not (0.10 <= weight <= 0.90):
             continue
         cat, _ = trait
         diff = abs(weight - 0.5)
-        if cat == last_category and len(probabilities) > 5:
-            diff += 0.08
+        if cat in recent_categories:
+            penalty = 0.25 if (recent_categories and cat == recent_categories[-1]) else 0.12
+            diff += penalty
         if diff < best_score:
-            best_score, best_trait = diff, trait
+            best_score = diff
+            best_trait = trait
+
+    if not best_trait and trait_weights:
+        best_trait = min(trait_weights.keys(), key=lambda t: abs(trait_weights[t] - 0.5))
     return best_trait
 
-CONFIDENCE_MAP = {"Yes": 0.90, "Probably": 0.75, "Don't Know": 0.50, "Doubtful": 0.25, "No": 0.10}
+CONFIDENCE_MAP = {"Yes": 0.88, "Probably": 0.72, "Don't Know": 0.50, "Doubtful": 0.28, "No": 0.12}
 
 def init_game():
     n = len(ALL_ANIMALS)
     probs = {a: 1.0 / n for a in ALL_ANIMALS}
-    first_trait = calculate_best_trait(probs, set(), None)
-    first_q = generate_question(first_trait[0], first_trait[1])
+    first_trait = calculate_best_trait(probs, set(), [])
+    first_q = generate_natural_question(first_trait[0], first_trait[1])
     state = {
-        "probs": probs, "asked": [first_trait], "last_cat": first_trait[0],
+        "probs": probs, "asked": [first_trait], "recent_cats": [first_trait[0]],
         "q_count": 1, "done": False, "curr_trait": first_trait
     }
-    return state, f"### Question 1\n**{first_q}**", f"Game started! Database active with {n} species.", gr.update(visible=True), gr.update(visible=False)
+    return state, f"### Question 1\n**{first_q}**", f"Game ready with {n} species! Think of an animal to begin.", gr.update(visible=True), gr.update(visible=False)
 
 def step_game(answer, state):
     if not state or state["done"]:
@@ -193,41 +176,37 @@ def step_game(answer, state):
             top3.append(f"{name} ({v*100:.1f}%)")
     status_text = f"**Current Leading Contenders:** {', '.join(top3)}"
 
-    if top_prob > 0.82 or (top_prob > 0.65 and top_prob > second_prob * 3.5) or state["q_count"] >= 22:
+    if top_prob > 0.80 or (top_prob > 0.60 and top_prob > second_prob * 3.5) or state["q_count"] >= 20:
         state["done"] = True
         win_data = ANIMAL_DB[top_animal]
         win_name = win_data['display_name']
         win_desc = win_data['description'][:350]
         res = (
-            f"## 🎉 Deduction Complete in {state['q_count']} Questions!\n"
+            f"## Deduction Complete in {state['q_count']} Questions!\n"
             f"### You were thinking of: **{win_name}** ({top_prob*100:.1f}% confidence)\n\n"
             f"> {win_desc}..."
         )
         return state, res, status_text, gr.update(visible=False), gr.update(visible=True)
 
     asked_set = set(tuple(x) for x in state["asked"])
-    if curr_trait in OPPOSITES:
-        asked_set.add(OPPOSITES[curr_trait])
-
-    best_trait = calculate_best_trait(probs, asked_set, state["last_cat"])
+    best_trait = calculate_best_trait(probs, asked_set, state["recent_cats"][-2:])
     if not best_trait:
         state["done"] = True
         win_data = ANIMAL_DB[top_animal]
-        win_name = win_data['display_name']
-        return state, f"## Guess: **{win_name}**", status_text, gr.update(visible=False), gr.update(visible=True)
+        return state, f"## Guess: **{win_data['display_name']}**", status_text, gr.update(visible=False), gr.update(visible=True)
 
     state["curr_trait"] = best_trait
     state["asked"].append(best_trait)
-    state["last_cat"] = best_trait[0]
+    state["recent_cats"].append(best_trait[0])
     state["q_count"] += 1
 
-    next_q = generate_question(best_trait[0], best_trait[1])
+    next_q = generate_natural_question(best_trait[0], best_trait[1])
     return state, f"### Question {state['q_count']}\n**{next_q}**", status_text, gr.update(visible=True), gr.update(visible=False)
 
 with gr.Blocks(title="ZoogGuess V2", theme=gr.themes.Soft()) as demo:
     gr.Markdown("# 🐾 ZoogGuess V2: Neural-Bayesian 20 Questions")
-    gr.Markdown("Think of any animal species. The Bayesian engine calculates optimal entropy bisection across 500 species while SmolLM2 synthesizes natural questions.")
-    
+    gr.Markdown("Think of any animal species. The Bayesian engine calculates optimal information gain across 500 species while SmolLM2 synthesizes natural questions.")
+
     state_box = gr.State()
     q_box = gr.Markdown()
     status_box = gr.Markdown()
