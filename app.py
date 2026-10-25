@@ -30,45 +30,68 @@ with open(DB_PATH, "r", encoding="utf-8") as f:
 
 ALL_ANIMALS = list(ANIMAL_DB.keys())
 
-NATURAL_TEMPLATES = {
-    "class": "Is this animal a {val}?",
-    "biome": "Does this animal typically live in {val}?",
-    "diet": "Is this creature known for being a {val}?",
-    "lifestyle": "Is this animal known for {val}?",
-    "covering": "Does this creature have {val}?",
-    "limbs": "Does this animal have {val}?",
-    "weapons": "Does this animal have {val}?",
-    "head": "Does this creature feature {val}?",
-    "build": "Does this animal have a {val}?",
-    "special": "Is this animal known for {val}?"
-}
-
-FRIENDLY_PHRASES = {
-    "four legs": "walking on four legs",
-    "cloven hooves": "having split or cloven hooves",
-    "single solid hooves": "having solid hooves like a horse",
-    "domesticated": "being a domesticated animal or livestock",
-    "social or herd-dwelling": "living in herds, packs, or social groups",
-    "solitary": "living mostly alone rather than in a herd",
-    "herbivore or plant-eater": "eating mostly grass, leaves, or plants",
-    "carnivore or active predator": "hunting and eating other animals",
-    "pastures or farmland": "farms, barns, or agricultural pastures",
-    "temperate forests or woodlands": "woodlands or temperate forests",
-    "polar ice or cold tundra": "freezing arctic ice or cold tundra",
-    "tropical rainforest or jungle": "tropical rainforests or jungles",
-    "arid desert or scrubland": "dry deserts or arid scrublands",
-    "mountainous or alpine highlands": "steep mountains or rocky highlands",
-    "thick wool or fleece": "a thick coat of wool or fleece",
-    "sharp fangs or canine teeth": "prominent fangs or sharp canine teeth",
-    "tufted ears": "distinctive tufts of hair on the tips of its ears",
-    "horns or blunt defense": "horns on its head"
+TRAIT_SPEECH_MAP = {
+    ("diet", "herbivore or plant-eater"): "Does this animal feed mostly on grass, leaves, or plants?",
+    ("diet", "carnivore or active predator"): "Does this animal hunt other creatures for meat?",
+    ("diet", "omnivore"): "Does this animal eat both plants and meat?",
+    ("diet", "insectivore or bug-eater"): "Does this creature primarily eat insects?",
+    ("diet", "piscivore"): "Does this animal eat mostly fish?",
+    ("diet", "frugivore"): "Does this creature feed mainly on fruits and berries?",
+    ("diet", "folivore browser"): "Does this animal browse on tree bark, leaves, and twigs?",
+    ("class", "mammal"): "Is this creature a mammal?",
+    ("class", "bird"): "Is this animal a bird?",
+    ("class", "reptile"): "Is this creature a reptile?",
+    ("class", "amphibian"): "Is this creature an amphibian?",
+    ("class", "fish"): "Is this animal a fish?",
+    ("class", "invertebrate"): "Is this creature an invertebrate (such as an insect, spider, or octopus)?",
+    ("limbs", "four legs"): "Does this animal walk on four legs?",
+    ("limbs", "cloven hooves"): "Does this animal have split or cloven hooves?",
+    ("limbs", "single solid hooves"): "Does this animal have solid hooves like a horse?",
+    ("limbs", "sharp retractable claws"): "Does this animal have sharp claws?",
+    ("limbs", "two legs and wings"): "Does this animal have wings?",
+    ("limbs", "flippers for swimming"): "Does this creature have flippers or paddles for swimming?",
+    ("limbs", "pectoral and dorsal fins"): "Does this creature swim using fins?",
+    ("limbs", "limbless, moves by slithering"): "Is this animal limbless and moves by slithering?",
+    ("biome", "pastures or farmland"): "Is this animal commonly found on farms or agricultural pastures?",
+    ("biome", "grasslands"): "Does this animal live in open grasslands or plains?",
+    ("biome", "savanna or grassland"): "Does this creature inhabit the open savanna or plains?",
+    ("biome", "tropical rainforest or jungle"): "Does this animal make its home in tropical rainforests or jungles?",
+    ("biome", "temperate forests or woodlands"): "Does this animal live in temperate forests or woodlands?",
+    ("biome", "polar ice or cold tundra"): "Does this animal live in freezing arctic ice or cold tundra?",
+    ("biome", "arid desert or scrubland"): "Does this animal inhabit dry desert or scrubland regions?",
+    ("biome", "open ocean or coastal waters"): "Does this creature live in the ocean or marine waters?",
+    ("biome", "freshwater wetlands, lakes, or rivers"): "Does this animal live in rivers, lakes, or freshwater wetlands?",
+    ("biome", "mountainous or alpine highlands"): "Does this creature live in steep mountains or rocky highlands?",
+    ("lifestyle", "domesticated"): "Is this a domesticated animal or pet kept by humans?",
+    ("lifestyle", "social or herd-dwelling"): "Does this animal typically live in herds, packs, or social groups?",
+    ("lifestyle", "solitary"): "Does this animal live mostly alone rather than in a group?",
+    ("lifestyle", "nocturnal or night-active"): "Is this creature active mostly at night?",
+    ("lifestyle", "diurnal or active during daylight"): "Is this creature active primarily during the daytime?",
+    ("lifestyle", "arboreal tree dweller"): "Does this animal spend most of its time up in trees?",
+    ("lifestyle", "semi aquatic"): "Does this creature spend a large part of its life in the water?",
+    ("covering", "short fur or hair"): "Is this animal covered in a coat of fur or hair?",
+    ("covering", "thick fur with spots"): "Does this animal have a spotted fur coat?",
+    ("covering", "thick wool or fleece"): "Does this animal have a thick coat of wool or fleece?",
+    ("covering", "feathers or plumage"): "Is this creature covered in feathers?",
+    ("covering", "scales or scutes"): "Does this animal have scales?",
+    ("covering", "exoskeleton or outer shell"): "Does this creature have a hard outer shell or exoskeleton?",
+    ("weapons", "horns or blunt defense"): "Does this animal have horns on its head?",
+    ("weapons", "permanent horns"): "Does this animal possess permanent horns?",
+    ("weapons", "branched antlers"): "Does this animal have branched antlers?",
+    ("weapons", "prominent tusks"): "Does this animal have large tusks?",
+    ("weapons", "sharp fangs or canine teeth"): "Does this animal have sharp fangs or prominent canine teeth?",
+    ("weapons", "venomous bite or stinger"): "Does this creature possess a venomous bite or stinger?",
+    ("head", "tufted ears"): "Does this animal have noticeable tufts of hair on the tips of its ears?",
+    ("build", "heavy robust build"): "Does this animal have a very large, heavy, or bulky build?",
+    ("build", "tall athletic build"): "Is this animal built tall with a slender or athletic frame?",
+    ("special", "produces milk or farmed by humans"): "Is this animal commercially raised on farms for milk, meat, or wool?"
 }
 
 def _run_model_inference(prompt):
     inputs = tokenizer(prompt, return_tensors="pt").to(DEVICE)
     with torch.no_grad():
         outputs = model.generate(
-            **inputs, max_new_tokens=20, temperature=0.2, top_p=0.85,
+            **inputs, max_new_tokens=18, temperature=0.15, top_p=0.8,
             repetition_penalty=1.2, do_sample=True, pad_token_id=tokenizer.eos_token_id
         )
     return tokenizer.decode(outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
@@ -78,31 +101,51 @@ if HAS_SPACES:
 
 def generate_natural_question(category, trait_val):
     clean_val = trait_val.replace("_", " ").strip()
-    friendly_val = FRIENDLY_PHRASES.get(clean_val, clean_val)
-    template = NATURAL_TEMPLATES.get(category, "Does your animal feature {val}?")
-    direct_q = template.format(val=friendly_val)
+    if (category, trait_val) in TRAIT_SPEECH_MAP:
+        base_q = TRAIT_SPEECH_MAP[(category, trait_val)]
+    elif (category, clean_val) in TRAIT_SPEECH_MAP:
+        base_q = TRAIT_SPEECH_MAP[(category, clean_val)]
+    else:
+        if category == "biome":
+            base_q = f"Does this animal live in {clean_val}?"
+        elif category == "class":
+            base_q = f"Is this animal a {clean_val}?"
+        elif category in ["weapons", "covering", "limbs", "head"]:
+            base_q = f"Does this animal have {clean_val}?"
+        else:
+            base_q = f"Is this animal known for {clean_val}?"
 
     prompt = (
-        "Rephrase this into a friendly, clear Yes/No question for 20 Questions without changing its meaning. "
-        "Keep it strictly under 15 words and end with a question mark:\n\n"
-        f"Input: {direct_q}\n"
+        "Convert the note into one brief, direct Yes/No question for 20 Questions. "
+        "Do not offer options. Do not use 'or not'. End with a question mark.\n\n"
+        f"Note: {base_q}\n"
         "Question:"
     )
-    generated = _run_model_inference(prompt)
-    first_line = generated.split("\n")[0].split("?")[0].strip()
-    if len(first_line) > 5 and any(first_line.lower().startswith(w) for w in ["is", "does", "can", "would", "has", "do", "are"]):
-        return first_line + "?"
-    return direct_q
+    candidate = _run_model_inference(prompt)
+    first_q = candidate.split("\n")[0].split("?")[0].strip()
+
+    bad_markers = [
+        " or not", "or sea", "or on land", "high ground or", "fresh water or",
+        "either", "yes or no", "is the answer", "long or short", "has either"
+    ]
+    is_valid_lead = any(first_q.lower().startswith(w) for w in ["is", "does", "can", "would", "has", "do", "are"])
+    has_bad_marker = any(b in first_q.lower() for b in bad_markers)
+
+    if is_valid_lead and not has_bad_marker and len(first_q.split()) >= 4:
+        return first_q + "?"
+    return base_q
 
 def get_animal_traits(animal_data):
     traits = set()
     for cat, val in animal_data.get("attributes", {}).items():
         if isinstance(val, list):
             for v in val:
-                if v.lower().strip() not in ["none", "unknown", "n/a", ""]:
+                v_clean = v.lower().strip()
+                if v_clean not in ["none", "unknown", "n/a", "solid coloration", "none of these", ""]:
                     traits.add((cat, v))
         elif isinstance(val, str):
-            if val.lower().strip() not in ["none", "unknown", "n/a", ""]:
+            v_clean = val.lower().strip()
+            if v_clean not in ["none", "unknown", "n/a", "solid coloration", "none of these", ""]:
                 traits.add((cat, val))
     return traits
 
@@ -119,13 +162,14 @@ def calculate_best_trait(probabilities, asked_traits, recent_categories):
     best_score = float("inf")
 
     for trait, weight in trait_weights.items():
-        if not (0.10 <= weight <= 0.90):
+        if not (0.08 <= weight <= 0.92):
             continue
         cat, _ = trait
         diff = abs(weight - 0.5)
-        if cat in recent_categories:
-            penalty = 0.25 if (recent_categories and cat == recent_categories[-1]) else 0.12
-            diff += penalty
+        if recent_categories and cat == recent_categories[-1]:
+            diff += 0.28
+        elif len(recent_categories) >= 2 and cat == recent_categories[-2]:
+            diff += 0.14
         if diff < best_score:
             best_score = diff
             best_trait = trait
@@ -204,7 +248,7 @@ def step_game(answer, state):
     return state, f"### Question {state['q_count']}\n**{next_q}**", status_text, gr.update(visible=True), gr.update(visible=False)
 
 with gr.Blocks(title="ZoogGuess V2", theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# 🐾 ZoogGuess V2: Neural-Bayesian 20 Questions")
+    gr.Markdown("# ZoogGuess V2: Neural-Bayesian 20 Questions")
     gr.Markdown("Think of any animal species. The Bayesian engine calculates optimal information gain across 500 species while SmolLM2 synthesizes natural questions.")
 
     state_box = gr.State()
@@ -218,7 +262,7 @@ with gr.Blocks(title="ZoogGuess V2", theme=gr.themes.Soft()) as demo:
         btn_d = gr.Button("Doubtful")
         btn_n = gr.Button("No", variant="stop")
 
-    restart_btn = gr.Button("🔄 Play Again", visible=False)
+    restart_btn = gr.Button("Play Again", visible=False)
 
     demo.load(init_game, outputs=[state_box, q_box, status_box, btn_row, restart_btn])
     restart_btn.click(init_game, outputs=[state_box, q_box, status_box, btn_row, restart_btn])
