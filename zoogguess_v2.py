@@ -53,29 +53,66 @@ if DEVICE == "cpu":
     model.to("cpu")
 model.eval()
 
+# Conversational translator to banish awkward biology terms
+FRIENDLY_TRAIT_MAP = {
+    # Diets
+    "folivore browser": "feeding primarily on leaves, twigs, and tree bark",
+    "frugivore": "eating mostly fruit and berries",
+    "insectivore": "eating mostly insects and invertebrates",
+    "herbivore/grazer": "eating grass and vegetation",
+    "carnivore/predator": "hunting and eating other animals",
+    "omnivore": "eating both plants and meat",
+    "piscivore": "eating primarily fish",
+    # Limbs
+    "hooves": "walking on hooves",
+    "four_legs_quadruped": "walking on all four legs",
+    "bipedal_two_legs": "standing and walking on two legs",
+    "pectoral_flippers": "having flippers for swimming",
+    "prehensile_tail": "having a grasping tail that can hold branches",
+    # Anatomy
+    "sagittal crest": "having a prominent bony crest on the top of its head",
+    "tufted tail": "having a tail with a tuft of hair on the end",
+    "permanent horns": "possessing permanent horns on its head",
+    "branched antlers": "possessing branched antlers that shed",
+    "blubber fat layer": "having a thick layer of insulating blubber",
+    "smooth rubbery hairless skin": "having smooth, hairless, rubbery skin",
+    # Lifestyle & Biome
+    "diurnal_day_active": "being active mostly during daylight hours",
+    "nocturnal_night_active": "being active mostly at night",
+    "solitary": "living a solitary life rather than in a herd or pack",
+    "social_or_pack": "living in herds, packs, or social groups",
+    "arboreal tree dweller": "spending most of its life up in the trees",
+    "semi aquatic": "spending significant time in the water"
+}
+
 def determine_stem(category, clean_trait):
-    """Provides a deterministic grammatical starting stem for the SLM to complete."""
+    # Apply friendly translation if present
+    for k, v in FRIENDLY_TRAIT_MAP.items():
+        if k in clean_trait:
+            clean_trait = clean_trait.replace(k, v)
+
     if category == "biome":
         return f"Does your animal make its home in {clean_trait}"
     elif category == "class":
         return f"Is this creature considered a {clean_trait}"
     elif category in ["weapons", "markings", "covering", "head"]:
+        if "having" in clean_trait or "possessing" in clean_trait:
+            return f"Is this animal characterized by {clean_trait}"
         return f"Does this animal sport noticeable {clean_trait}"
     elif category == "limbs":
-        if any(w in clean_trait for w in ["legs", "feet", "wings", "flippers", "arms"]):
-            return f"Does your creature move around using {clean_trait}"
-        return f"Does this animal actively {clean_trait}"
+        if "walking" in clean_trait or "moving" in clean_trait or "having" in clean_trait:
+            return f"Is your creature known for {clean_trait}"
+        return f"Does your creature move around using {clean_trait}"
     elif category in ["diet", "lifestyle", "build"]:
-        if any(w in clean_trait for w in ["predator", "grazer", "omnivore", "hunter", "eater"]):
-            return f"Is your creature primarily a {clean_trait}"
-        return f"Is this animal known for being {clean_trait}"
+        if "eating" in clean_trait or "feeding" in clean_trait or "being" in clean_trait or "living" in clean_trait:
+            return f"Is your animal known for {clean_trait}"
+        return f"Would you describe this animal as {clean_trait}"
     return f"Does your animal have {clean_trait}"
 
 def generate_neural_question(category, trait_val):
     clean_trait = trait_val.replace("_", " ").replace("/", " or ")
     stem = determine_stem(category, clean_trait)
     
-    # Prompt SmolLM to complete the question strictly without adding follow-ups
     prompt = (
         "Complete the following yes-no question about an animal attribute. "
         "Keep it strictly as a single yes-no question. Do not list alternatives or multiple options.\n\n"
@@ -87,7 +124,7 @@ def generate_neural_question(category, trait_val):
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_new_tokens=18,
+            max_new_tokens=16,
             temperature=0.2,
             top_p=0.8,
             repetition_penalty=1.3,
@@ -98,19 +135,13 @@ def generate_neural_question(category, trait_val):
     generated_tokens = outputs[0][inputs["input_ids"].shape[1]:]
     completion = tokenizer.decode(generated_tokens, skip_special_tokens=True).strip()
     
-    # Isolate first clause before comma or question mark
     first_clause = completion.split("\n")[0].split("?")[0].strip()
-    
-    # Formulate candidate question
     candidate = f"{stem} {first_clause}".strip()
     if not candidate.endswith("?"):
         candidate += "?"
-
-    # Clean up double spacing or repetitive punctuation
     candidate = " ".join(candidate.split())
 
-    # Hard rejection of multiple choice or compound queries
-    disallowed_patterns = [", or", "what type", "which of", "how many", "rather than", "if so"]
+    disallowed_patterns = [", or", "what type", "which of", "how many", "rather than", "if so", "folivore"]
     if any(p in candidate.lower() for p in disallowed_patterns) or candidate.count("?") > 1:
         return f"{stem}?"
 
@@ -120,9 +151,6 @@ def generate_neural_question(category, trait_val):
 # 3. KNOWLEDGE BASE & TRAIT EXTRACTION
 # =====================================================================
 DB_PATH = "animals_v2_clean.json"
-if not os.path.exists(DB_PATH):
-    raise FileNotFoundError(f"Missing '{DB_PATH}'. Please ensure it is in the working directory.")
-
 with open(DB_PATH, "r", encoding="utf-8") as f:
     ANIMAL_DB = json.load(f)
 
@@ -154,7 +182,7 @@ def get_animal_traits(animal_data):
 def calculate_best_trait(probabilities, asked_traits, last_category):
     trait_weights = defaultdict(float)
     for animal, prob in probabilities.items():
-        if prob < 0.001:
+        if prob < 0.0005:
             continue
         for t in get_animal_traits(ANIMAL_DB[animal]):
             if t not in asked_traits:
@@ -164,7 +192,7 @@ def calculate_best_trait(probabilities, asked_traits, last_category):
     best_score = float("inf")
 
     for trait, weight in trait_weights.items():
-        if not (0.05 < weight < 0.95):
+        if not (0.04 < weight < 0.96):
             continue
 
         cat, _ = trait
@@ -187,7 +215,7 @@ def run_game():
     question_count = 0
 
     print("\n" + "=" * 65)
-    print("   ZOOGGUESS V2: ALL-IN-ONE NEURAL BAYESIAN GAME")
+    print("   ZOOGGUESS V2: REFINED 500-ANIMAL ENGINE")
     print(f" Loaded {n} animals | SLM Generation: Active ({DEVICE})")
     print(" Answer options:")
     print("  [y] Yes      [p] Probably / Mostly")
@@ -202,7 +230,7 @@ def run_game():
         "n": 0.10, "no": 0.10
     }
 
-    while question_count < 20:
+    while question_count < 22:
         sorted_candidates = sorted(probs.items(), key=lambda x: x[1], reverse=True)
         top_animal, top_prob = sorted_candidates[0]
         second_animal, second_prob = sorted_candidates[1]
@@ -241,7 +269,7 @@ def run_game():
             probs = {k: v / total_mass for k, v in probs.items()}
 
         top3 = sorted(probs.items(), key=lambda x: x[1], reverse=True)[:3]
-        preview = ", ".join([f"{ANIMAL_DB[k]['display_name']} ({v*100:.1f}%)" for k, v in top3 if v > 0.05])
+        preview = ", ".join([f"{ANIMAL_DB[k]['display_name']} ({v*100:.1f}%)" for k, v in top3 if v > 0.03])
         print(f"       Leaders: {preview}")
         print("-" * 55)
 
@@ -251,7 +279,7 @@ def run_game():
     print("\n" + "=" * 65)
     print(f" DEDUCTION COMPLETE in {question_count} questions!")
     print(f" Guess: **{ANIMAL_DB[winner]['display_name'].upper()}** (Confidence: {confidence*100:.1f}%)")
-    print(f" Summary: {ANIMAL_DB[winner]['description'][:250]}...")
+    print(f" Summary: {ANIMAL_DB[winner]['description'][:280]}...")
     print("=" * 65)
 
 if __name__ == "__main__":

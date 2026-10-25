@@ -14,7 +14,6 @@ except ImportError:
 MODEL_ID = "HuggingFaceTB/SmolLM2-135M-Instruct"
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
-print(f"Loading {MODEL_ID} on {DEVICE}...")
 tokenizer = AutoTokenizer.from_pretrained(MODEL_ID)
 model = AutoModelForCausalLM.from_pretrained(
     MODEL_ID,
@@ -40,28 +39,61 @@ OPPOSITES = {
     ("diet", "herbivore/grazer"): ("diet", "carnivore/predator")
 }
 
+FRIENDLY_TRAIT_MAP = {
+    "folivore browser": "feeding primarily on leaves, twigs, and tree bark",
+    "frugivore": "eating mostly fruit and berries",
+    "insectivore": "eating mostly insects and invertebrates",
+    "herbivore/grazer": "eating grass and vegetation",
+    "carnivore/predator": "hunting and eating other animals",
+    "omnivore": "eating both plants and meat",
+    "piscivore": "eating primarily fish",
+    "hooves": "walking on hooves",
+    "four_legs_quadruped": "walking on all four legs",
+    "bipedal_two_legs": "standing and walking on two legs",
+    "pectoral_flippers": "having flippers for swimming",
+    "prehensile_tail": "having a grasping tail that can hold branches",
+    "sagittal crest": "having a prominent bony crest on the top of its head",
+    "tufted tail": "having a tail with a tuft of hair on the end",
+    "permanent horns": "possessing permanent horns on its head",
+    "branched antlers": "possessing branched antlers that shed",
+    "blubber fat layer": "having a thick layer of insulating blubber",
+    "smooth rubbery hairless skin": "having smooth, hairless, rubbery skin",
+    "diurnal_day_active": "being active mostly during daylight hours",
+    "nocturnal_night_active": "being active mostly at night",
+    "solitary": "living a solitary life rather than in a herd or pack",
+    "social_or_pack": "living in herds, packs, or social groups",
+    "arboreal tree dweller": "spending most of its life up in the trees",
+    "semi aquatic": "spending significant time in the water"
+}
+
 def determine_stem(category, clean_trait):
+    for k, v in FRIENDLY_TRAIT_MAP.items():
+        if k in clean_trait:
+            clean_trait = clean_trait.replace(k, v)
+
     if category == "biome":
         return f"Does your animal make its home in {clean_trait}"
     elif category == "class":
         return f"Is this creature considered a {clean_trait}"
     elif category in ["weapons", "markings", "covering", "head"]:
+        if "having" in clean_trait or "possessing" in clean_trait:
+            return f"Is this animal characterized by {clean_trait}"
         return f"Does this animal sport noticeable {clean_trait}"
     elif category == "limbs":
-        if any(w in clean_trait for w in ["legs", "feet", "wings", "flippers", "arms"]):
-            return f"Does your creature move around using {clean_trait}"
-        return f"Does this animal actively {clean_trait}"
+        if "walking" in clean_trait or "moving" in clean_trait or "having" in clean_trait:
+            return f"Is your creature known for {clean_trait}"
+        return f"Does your creature move around using {clean_trait}"
     elif category in ["diet", "lifestyle", "build"]:
-        if any(w in clean_trait for w in ["predator", "grazer", "omnivore", "hunter", "eater"]):
-            return f"Is your creature primarily a {clean_trait}"
-        return f"Is this animal known for being {clean_trait}"
+        if "eating" in clean_trait or "feeding" in clean_trait or "being" in clean_trait or "living" in clean_trait:
+            return f"Is your animal known for {clean_trait}"
+        return f"Would you describe this animal as {clean_trait}"
     return f"Does your animal have {clean_trait}"
 
 def _run_model_inference(prompt):
     inputs = tokenizer(prompt, return_tensors="pt").to(DEVICE)
     with torch.no_grad():
         outputs = model.generate(
-            **inputs, max_new_tokens=18, temperature=0.2, top_p=0.8,
+            **inputs, max_new_tokens=16, temperature=0.2, top_p=0.8,
             repetition_penalty=1.3, do_sample=True, pad_token_id=tokenizer.eos_token_id
         )
     return tokenizer.decode(outputs[0][inputs["input_ids"].shape[1]:], skip_special_tokens=True).strip()
@@ -83,7 +115,7 @@ def generate_question(category, trait_val):
     if not candidate.endswith("?"):
         candidate += "?"
     candidate = " ".join(candidate.split())
-    if any(p in candidate.lower() for p in [", or", "what type", "which of", "how many", "rather than", "if so"]):
+    if any(p in candidate.lower() for p in [", or", "what type", "which of", "how many", "rather than", "if so", "folivore"]):
         return f"{stem}?"
     return candidate
 
@@ -101,7 +133,7 @@ def get_animal_traits(animal_data):
 def calculate_best_trait(probabilities, asked_traits, last_category):
     trait_weights = defaultdict(float)
     for animal, prob in probabilities.items():
-        if prob < 0.001:
+        if prob < 0.0005:
             continue
         for t in get_animal_traits(ANIMAL_DB[animal]):
             if t not in asked_traits:
@@ -109,7 +141,7 @@ def calculate_best_trait(probabilities, asked_traits, last_category):
 
     best_trait, best_score = None, float("inf")
     for trait, weight in trait_weights.items():
-        if not (0.05 < weight < 0.95):
+        if not (0.04 < weight < 0.96):
             continue
         cat, _ = trait
         diff = abs(weight - 0.5)
@@ -130,7 +162,7 @@ def init_game():
         "probs": probs, "asked": [first_trait], "last_cat": first_trait[0],
         "q_count": 1, "done": False, "curr_trait": first_trait
     }
-    return state, f"### Question 1\n**{first_q}**", "Game started! Think of an animal.", gr.update(visible=True), gr.update(visible=False)
+    return state, f"### Question 1\n**{first_q}**", f"Game started! Database active with {n} species.", gr.update(visible=True), gr.update(visible=False)
 
 def step_game(answer, state):
     if not state or state["done"]:
@@ -161,13 +193,13 @@ def step_game(answer, state):
             top3.append(f"{name} ({v*100:.1f}%)")
     status_text = f"**Current Leading Contenders:** {', '.join(top3)}"
 
-    if top_prob > 0.82 or (top_prob > 0.65 and top_prob > second_prob * 3.5) or state["q_count"] >= 20:
+    if top_prob > 0.82 or (top_prob > 0.65 and top_prob > second_prob * 3.5) or state["q_count"] >= 22:
         state["done"] = True
         win_data = ANIMAL_DB[top_animal]
         win_name = win_data['display_name']
         win_desc = win_data['description'][:350]
         res = (
-            f"## Deduction Complete in {state['q_count']} Questions!\n"
+            f"## 🎉 Deduction Complete in {state['q_count']} Questions!\n"
             f"### You were thinking of: **{win_name}** ({top_prob*100:.1f}% confidence)\n\n"
             f"> {win_desc}..."
         )
@@ -193,8 +225,8 @@ def step_game(answer, state):
     return state, f"### Question {state['q_count']}\n**{next_q}**", status_text, gr.update(visible=True), gr.update(visible=False)
 
 with gr.Blocks(title="ZoogGuess V2", theme=gr.themes.Soft()) as demo:
-    gr.Markdown("# ZoogGuess V2: Neural-Bayesian 20 Questions")
-    gr.Markdown("Think of an animal species. The Bayesian engine calculates optimal information gain while SmolLM2 synthesizes dynamic questions on the fly.")
+    gr.Markdown("# 🐾 ZoogGuess V2: Neural-Bayesian 20 Questions")
+    gr.Markdown("Think of any animal species. The Bayesian engine calculates optimal entropy bisection across 500 species while SmolLM2 synthesizes natural questions.")
     
     state_box = gr.State()
     q_box = gr.Markdown()
@@ -207,7 +239,7 @@ with gr.Blocks(title="ZoogGuess V2", theme=gr.themes.Soft()) as demo:
         btn_d = gr.Button("Doubtful")
         btn_n = gr.Button("No", variant="stop")
 
-    restart_btn = gr.Button("Play Again", visible=False)
+    restart_btn = gr.Button("🔄 Play Again", visible=False)
 
     demo.load(init_game, outputs=[state_box, q_box, status_box, btn_row, restart_btn])
     restart_btn.click(init_game, outputs=[state_box, q_box, status_box, btn_row, restart_btn])
